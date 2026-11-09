@@ -32,6 +32,34 @@ body{margin:0}
 .wd-section-img.wd-in{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){.wd-section-img{opacity:1;transform:none;transition:none}}
 .wd-col{container-type:inline-size;max-width:min(600px, calc(100vh * 414 / 736));max-width:min(600px, calc(100dvh * 414 / 736))}
+@keyframes wd-fade-up{from{opacity:0;transform:translateY(14px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes wd-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+@keyframes wd-draw-check{from{stroke-dashoffset:48}to{stroke-dashoffset:0}}
+@keyframes wd-ring-pop{0%{transform:scale(0.6);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes wd-float-petal{0%{opacity:0;transform:translateY(15px) scale(0.6) rotate(0deg)}30%{opacity:0.85}100%{opacity:0;transform:translateY(-95px) scale(1.1) rotate(25deg)}}
+@keyframes wd-spin{to{transform:rotate(360deg)}}
+.wd-form.wd-is-submitted>.wd-field-group,.wd-form.wd-is-submitted>.wd-submit,.wd-form.wd-is-submitted>.wd-status-msg{display:none!important}
+.wd-status-msg{margin:-1cqw 0 0 0;padding:6px 12px;border-radius:6px;text-align:center;font-family:"Cormorant Garamond",serif;font-size:clamp(13px,3.6cqw,20px);line-height:1.35;transition:all .25s ease}
+.wd-status-msg.wd-status-error{background:rgba(253,242,242,0.92);border:1px solid rgba(188,84,78,0.35);color:#94302c;animation:wd-shake .4s ease}
+.wd-status-msg.wd-status-saved{background:rgba(232,243,247,0.85);border:1px solid rgba(27,38,82,0.18);color:#1B2652;cursor:pointer}
+.wd-thankyou-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3.5cqw 3cqw 2.5cqw;color:#1B2652;font-family:"Cormorant Garamond",serif;animation:wd-fade-up .55s cubic-bezier(0.22,1,0.36,1) both}
+.wd-ty-crest{position:relative;width:clamp(54px,14cqw,76px);height:clamp(54px,14cqw,76px);margin-bottom:1.5cqw;animation:wd-ring-pop .6s cubic-bezier(0.34,1.56,0.64,1) both}
+.wd-ty-check{stroke-dasharray:48;stroke-dashoffset:48;animation:wd-draw-check .55s .25s ease-out forwards}
+.wd-ty-subtitle{font-size:clamp(11px,2.9cqw,16px);letter-spacing:0.22em;text-transform:uppercase;color:#8C7044;margin:0 0 0.6cqw;font-weight:500}
+.wd-ty-title{font-size:clamp(22px,6.2cqw,34px);font-weight:500;color:#1B2652;margin:0;line-height:1.2;letter-spacing:0.02em}
+.wd-ty-divider{width:62%;max-width:220px;height:14px;margin:1.6cqw auto 2cqw;display:block}
+.wd-ty-lead{font-size:clamp(14px,3.8cqw,22px);line-height:1.45;color:#333d4b;margin:0 0 1cqw;max-width:94%}
+.wd-ty-guest{display:inline-block;font-size:clamp(17px,4.7cqw,27px);font-weight:500;color:#1B2652;border-bottom:1px solid rgba(197,155,95,0.55);padding:0 8px 1px;margin:0.4cqw 0 2cqw}
+.wd-ty-ticket{width:100%;box-sizing:border-box;background:linear-gradient(180deg,rgba(232,243,247,0.72) 0%,rgba(243,249,252,0.88) 100%);border:1px solid rgba(27,38,82,0.14);border-radius:10px;padding:2.6cqw 3.4cqw;margin:0.5cqw 0 2.2cqw;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.65),0 4px 14px rgba(27,38,82,0.05);display:flex;flex-direction:column;gap:1.2cqw;text-align:left}
+.wd-ty-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:clamp(13px,3.5cqw,20px);line-height:1.35}
+.wd-ty-row-label{color:#666b74;white-space:nowrap}
+.wd-ty-row-val{color:#1B2652;font-weight:500;text-align:right}
+.wd-ty-msg-box{margin-top:0.8cqw;padding-top:1.2cqw;border-top:1px dashed rgba(27,38,82,0.16);text-align:center;font-style:italic;color:#3b465e;font-size:clamp(13px,3.5cqw,20px);line-height:1.4;word-break:break-word}
+.wd-ty-closing{font-size:clamp(13px,3.6cqw,20px);line-height:1.4;color:#1B2652;font-style:italic;margin:0 0 2cqw;padding:0 2cqw}
+.wd-ty-back{background:transparent;border:1px solid rgba(27,38,82,0.22);border-radius:999px;padding:5px 16px;font-family:"Cormorant Garamond",serif;font-size:clamp(12px,3.2cqw,18px);color:#444a54;cursor:pointer;transition:all .2s ease}
+.wd-ty-back:hover{background:rgba(27,38,82,0.06);color:#1B2652;border-color:rgba(27,38,82,0.4)}
+.wd-ty-petal{position:absolute;pointer-events:none;bottom:10%;opacity:0;animation:wd-float-petal 2.6s ease-out forwards}
+.wd-spinner{display:inline-block;width:1em;height:1em;border:2px solid rgba(27,38,82,0.25);border-top-color:#1B2652;border-radius:50%;animation:wd-spin .7s linear infinite;vertical-align:middle;margin-right:8px}
 </style>
 </helmet>
 <div class="wd-page" style="position: relative; width: 100%; background: #cccccc; display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif;">
@@ -171,6 +199,266 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 };
 }
 }
+</script>
+<script>
+(() => {
+  const API_URL = "https://script.google.com/macros/s/AKfycbxlyxKCMQRlTyDbYg-UDNwv1CcSLNQPoQ3Qenwd7nYIlkdkUWmoZLQRB-qtTHhEgFr2hg/exec";
+
+  let isSubmitting = false;
+
+  function escapeHTML(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function showError(form, submitButton, message) {
+    let status = form.querySelector(".wd-status-msg");
+    if (!status) {
+      status = document.createElement("div");
+      status.className = "wd-status-msg";
+      submitButton.insertAdjacentElement("afterend", status);
+    }
+    status.className = "wd-status-msg";
+    void status.offsetWidth; // Kích hoạt lại hiệu ứng shake
+    status.className = "wd-status-msg wd-status-error";
+    status.textContent = "✦ " + message;
+    status.style.display = "block";
+  }
+
+  function spawnPetals(container) {
+    const symbols = ["❦", "✦", "♡", "✿", "✧"];
+    const colors = ["#C59B5F", "#1B2652", "#7BA7CC", "#D4A5A5", "#9BBBD8"];
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement("span");
+      p.className = "wd-ty-petal";
+      p.textContent = symbols[i % symbols.length];
+      p.style.left = (8 + Math.random() * 84).toFixed(1) + "%";
+      p.style.fontSize = (12 + Math.random() * 10).toFixed(0) + "px";
+      p.style.color = colors[i % colors.length];
+      p.style.animationDelay = (Math.random() * 0.65).toFixed(2) + "s";
+      p.style.animationDuration = (2.1 + Math.random() * 1.1).toFixed(2) + "s";
+      container.appendChild(p);
+      setTimeout(() => p.remove(), 3500);
+    }
+  }
+
+  function renderThankYouCard(form, submitButton, { name, attendance, guests, message }) {
+    const isYes = attendance === "yes";
+    const safeName = escapeHTML(name);
+    const safeMsg = escapeHTML(message);
+    const safeGuests = escapeHTML(guests);
+
+    let card = form.querySelector(".wd-thankyou-card");
+    if (!card) {
+      card = document.createElement("div");
+      card.className = "wd-thankyou-card";
+      form.appendChild(card);
+    }
+
+    card.innerHTML = `
+      <div class="wd-ty-crest" aria-hidden="true">
+        <svg viewBox="0 0 80 80" width="100%" height="100%" fill="none">
+          <circle cx="40" cy="40" r="36" stroke="#C59B5F" stroke-width="1" stroke-dasharray="3 3" opacity="0.75"/>
+          <circle cx="40" cy="40" r="30" fill="rgba(232,243,247,0.85)" stroke="#1B2652" stroke-width="1.3"/>
+          <path class="wd-ty-check" d="M27 40.5L36 49.5L54 31.5" stroke="#1B2652" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="4" r="2.2" fill="#C59B5F"/>
+          <circle cx="40" cy="76" r="2.2" fill="#C59B5F"/>
+          <circle cx="4" cy="40" r="2.2" fill="#C59B5F"/>
+          <circle cx="76" cy="40" r="2.2" fill="#C59B5F"/>
+        </svg>
+      </div>
+
+      <p class="wd-ty-subtitle">Lê Ngọc Hải &amp; Nguyễn Thị Kim Anh</p>
+      <h3 class="wd-ty-title">Trân Trọng Cảm Ơn</h3>
+
+      <svg class="wd-ty-divider" viewBox="0 0 220 14" fill="none" aria-hidden="true">
+        <line x1="10" y1="7" x2="88" y2="7" stroke="#C59B5F" stroke-width="0.9" opacity="0.7"/>
+        <path d="M110 2L114.5 7L110 12L105.5 7Z" fill="#C59B5F"/>
+        <circle cx="97" cy="7" r="1.6" fill="#1B2652" opacity="0.6"/>
+        <circle cx="123" cy="7" r="1.6" fill="#1B2652" opacity="0.6"/>
+        <line x1="132" y1="7" x2="210" y2="7" stroke="#C59B5F" stroke-width="0.9" opacity="0.7"/>
+      </svg>
+
+      <p class="wd-ty-lead">
+        ${isYes
+          ? "Niềm vui ngày trọng đại của gia đình chúng tôi sẽ trọn vẹn hơn rất nhiều khi có sự hiện diện của"
+          : "Dù không thể trực tiếp tham dự, tình cảm và lời chúc tốt đẹp của quý khách vẫn là món quà vô giá đối với vợ chồng chúng tôi"}
+      </p>
+      <div class="wd-ty-guest">${safeName}</div>
+
+      <div class="wd-ty-ticket">
+        <div class="wd-ty-row">
+          <span class="wd-ty-row-label">Phản hồi:</span>
+          <span class="wd-ty-row-val">${isYes ? `Tham dự (${safeGuests} khách)` : "Gửi lời chúc từ xa"}</span>
+        </div>
+        ${isYes ? `
+        <div class="wd-ty-row">
+          <span class="wd-ty-row-label">Thời gian:</span>
+          <span class="wd-ty-row-val">17:30 • Thứ Bảy, 28.11.2026</span>
+        </div>
+        <div class="wd-ty-row">
+          <span class="wd-ty-row-label">Địa điểm:</span>
+          <span class="wd-ty-row-val">Mường Thanh Luxury Hạ Long</span>
+        </div>
+        ` : ""}
+        ${safeMsg ? `<div class="wd-ty-msg-box">“${safeMsg}”</div>` : ""}
+      </div>
+
+      <p class="wd-ty-closing">
+        ${isYes
+          ? "Hẹn gặp Quý Khách trong khoảnh khắc hạnh phúc nhất của chúng tôi!"
+          : "Kính chúc Quý Khách cùng gia đình luôn dồi dào sức khỏe, hạnh phúc và bình an!"}
+      </p>
+
+      <button type="button" class="wd-ty-back">← Xem lại thông tin đã gửi</button>
+    `;
+
+    card.style.display = "flex";
+    form.classList.add("wd-is-submitted");
+    spawnPetals(card);
+  }
+
+  // Ẩn thông báo lỗi ngay khi khách bắt đầu nhập liệu
+  document.addEventListener("input", (e) => {
+    const form = e.target.closest(".wd-form");
+    if (!form) return;
+    const status = form.querySelector(".wd-status-msg.wd-status-error");
+    if (status) status.style.display = "none";
+  });
+
+  // Chặn submit mặc định để tránh reload trang khi nhấn phím Enter trong ô input
+  document.addEventListener("submit", (e) => {
+    if (e.target.closest(".wd-form")) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener("click", async (e) => {
+    // Nút quay lại xem form từ Thiệp Cảm Ơn
+    const backBtn = e.target.closest(".wd-ty-back");
+    if (backBtn) {
+      const form = backBtn.closest(".wd-form");
+      if (form) {
+        form.classList.remove("wd-is-submitted");
+        const card = form.querySelector(".wd-thankyou-card");
+        if (card) card.style.display = "none";
+
+        const submitButton = form.querySelector(".wd-submit");
+        const submitText = submitButton && submitButton.querySelector(".wd-submit-text");
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.style.opacity = "1";
+        }
+        if (submitText) submitText.textContent = "Gửi lại xác nhận";
+
+        let status = form.querySelector(".wd-status-msg");
+        if (!status && submitButton) {
+          status = document.createElement("div");
+          submitButton.insertAdjacentElement("afterend", status);
+        }
+        if (status) {
+          status.className = "wd-status-msg wd-status-saved";
+          status.textContent = "✦ Đã ghi nhận phản hồi • Chạm để xem lại thiệp cảm ơn";
+          status.style.display = "block";
+        }
+      }
+      return;
+    }
+
+    // Mở lại thiệp cảm ơn khi bấm vào thanh trạng thái đã lưu
+    const savedBadge = e.target.closest(".wd-status-msg.wd-status-saved");
+    if (savedBadge) {
+      const form = savedBadge.closest(".wd-form");
+      const card = form && form.querySelector(".wd-thankyou-card");
+      if (form && card) {
+        card.style.display = "flex";
+        form.classList.add("wd-is-submitted");
+      }
+      return;
+    }
+
+    const submitButton = e.target.closest(".wd-submit");
+    if (!submitButton || isSubmitting) return;
+
+    const form = submitButton.closest(".wd-form") || document.querySelector(".wd-form");
+    if (!form) return;
+
+    const nameInput = form.querySelector("#wd-name");
+    const countInput = form.querySelector("#wd-count");
+    const messageInput = form.querySelector("#wd-msg");
+    const yesButton = form.querySelector(".wd-opt-yes");
+    const submitText = submitButton.querySelector(".wd-submit-text");
+
+    const name = nameInput ? nameInput.value.trim() : "";
+    const count = countInput ? countInput.value.trim() : "";
+    const message = messageInput ? messageInput.value.trim() : "";
+
+    const attendance = (yesButton && yesButton.getAttribute("aria-pressed") === "true")
+      ? "yes"
+      : "no";
+
+    if (!name) {
+      showError(form, submitButton, "Vui lòng nhập tên của bạn nhé!");
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    if (attendance === "yes") {
+      const guests = Number(count);
+      if (!count || !Number.isInteger(guests) || guests < 1) {
+        showError(form, submitButton, "Vui lòng nhập số lượng người tham dự hợp lệ!");
+        if (countInput) countInput.focus();
+        return;
+      }
+    }
+
+    const guestsVal = attendance === "yes" ? count : "0";
+    const data = new URLSearchParams();
+    data.append("name", name);
+    data.append("attendance", attendance);
+    data.append("guests", guestsVal);
+    data.append("message", message);
+
+    isSubmitting = true;
+    submitButton.disabled = true;
+    submitButton.style.opacity = "0.75";
+    const originalBtnHTML = submitText ? submitText.innerHTML : "Xác nhận gửi";
+    if (submitText) {
+      submitText.innerHTML = `<span class="wd-spinner"></span>Đang gửi lời hồi đáp...`;
+    }
+
+    const existingStatus = form.querySelector(".wd-status-msg");
+    if (existingStatus) existingStatus.style.display = "none";
+
+    try {
+      await fetch(API_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      });
+
+      isSubmitting = false;
+      if (submitText) submitText.innerHTML = originalBtnHTML;
+      renderThankYouCard(form, submitButton, {
+        name,
+        attendance,
+        guests: guestsVal,
+        message
+      });
+    } catch (error) {
+      console.error("RSVP Error:", error);
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitButton.style.opacity = "1";
+      if (submitText) submitText.innerHTML = originalBtnHTML;
+      showError(form, submitButton, "Chưa thể kết nối, vui lòng thử lại sau giây lát!");
+    }
+  });
+})();
 </script>
 </body>
 </html>
