@@ -93,7 +93,8 @@ body{margin:0}
   <img class="wd-bg" src="./assets/2b315a4a740ef16ec355476c8ec4f4ff.webp" alt="" aria-hidden="true" style="position: fixed; top: 0; left: 0; width: 100%; aspect-ratio: 3072 / 1920; object-fit: cover; display: block">
   <main class="wd-main wd-col" style="position: relative; width: 100%; background: #e8f3f7; display: flex; flex-direction: column; align-items: stretch;">
     <section class="wd-section wd-hero" style="position: relative; width: 100%; aspect-ratio: 414 / 736; overflow: hidden;">
-      <img class="wd-hero-img wd-section-img wd-in" src="./assets/hero.jpg" alt="The wedding of Hải Lê &amp; Kim Anh" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+      <video class="wd-hero-video" src="./assets/8904298247c0d5884aef5ac6c84d0058.webm" ref="{{videoRef}}" autoplay="autoplay" muted="muted" playsinline="playsinline" preload="auto" onPlay="{{onVideoPlay}}" onEnded="{{onVideoEnded}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+      <sc-if value="{{heroShown}}" hint-placeholder-val="{{ false }}"><img class="wd-hero-img" src="./assets/54fa7a4e9e537d0f46a7dd1b2f11a075.webp" alt="Lê Ngọc Hải và Nguyễn Thị Kim Anh" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;"></sc-if>
     </section>
     <div class="wd-content" style="position: relative; width: 100%; display: flex; flex-direction: column; align-items: stretch;">
       <img class="wd-content-bg" src="./assets/a7feeff7c403057d605d82361ebf102c.webp" alt="" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: fill; display: block; pointer-events: none;">
