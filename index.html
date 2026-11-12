@@ -15,12 +15,13 @@
 @font-face{font-family:"Cormorant Garamond";font-weight:400 500;font-style:normal;src:url("./assets/821781da50244c9ac432b786110857b6.ttf") format("truetype")}
 body{margin:0}
 @keyframes wd-pulse{0%,100%{transform:scale(1)}25%{transform:scale(1.1)}75%{transform:scale(0.9)}}
-.wd-venue-button{animation:wd-pulse 2.4s ease-in-out infinite}
+.wd-venue-button,.wd-venue-link{animation:wd-pulse 2.4s ease-in-out infinite;transform-origin:center}
+.wd-venue-link:hover{background:rgba(232,243,247,0.55)!important;border-color:rgba(27,38,82,0.45)!important}
 @keyframes wd-ch-in{from{opacity:0}to{opacity:1}}
 .wd-ch{opacity:0}
 .wd-thanks-text.wd-thanks-on .wd-ch{animation:wd-ch-in .05s linear both}
 @media (prefers-reduced-motion:reduce){.wd-ch{opacity:1;animation:none!important}}
-@media (prefers-reduced-motion:reduce){.wd-venue-button{animation:none}}
+@media (prefers-reduced-motion:reduce){.wd-venue-button,.wd-venue-link{animation:none}}
 .wd-form-bg{background-image:url("./assets/9c5fabc571677876c7a0095d25aa6e84.webp")}
 .wd-input-bg{background-image:url("./assets/62e08b5cc9578cba49f9f586158ee8d6.webp")}
 .wd-opt-selected{background-image:url("./assets/37db554ac2a9459918287b69653e487b.webp")}
@@ -74,8 +75,8 @@ body{margin:0}
       <div class="wd-content-overlay" style="position: absolute; inset: 0; pointer-events: none;">
         <img class="wd-content-texture" src="./assets/1322e67e3c51c38dd25e37ef68c5ecc3.webp" alt="" aria-hidden="true" style="position: sticky; top: 0; width: 100%; aspect-ratio: 1080 / 2520; object-fit: cover; display: block;">
       </div>
-      <section class="wd-section wd-venue" style="position: relative; width: 100%; aspect-ratio: 768 / 1320;">
-        <a class="wd-venue-link" href="https://maps.app.goo.gl/frR36HVwo9DeBCf16" target="_blank" rel="noopener noreferrer" aria-label="Xem đường đi trên Google Maps" style="position: absolute; top: 59.54%; left: 29.5%; width: 40.83%; display: block; z-index: 2"><img class="wd-venue-button" src="./assets/096042002fe61f2e581aef0e34d2a6c7.webp" alt="Xem đường đi" style="width: 100%; height: auto; aspect-ratio: 311 / 86; max-width: none; display: block; object-fit: contain; transform-origin: center"></a><img class="wd-section-img wd-venue-img" loading="lazy" decoding="async" ref="{{revealRef}}" src="./assets/2891d525c2026e2ae8283ffc10a1b49c.webp" alt="Hôn lễ được cử hành tại Mường Thanh Luxury Hạ Long, 17:30 Thứ Bảy 28.11.2026" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+      <section class="wd-section wd-venue" style="position: relative; width: 100%; aspect-ratio: 980 / 1396;">
+        <a class="wd-venue-link" href="https://maps.app.goo.gl/frR36HVwo9DeBCf16" target="_blank" rel="noopener noreferrer" aria-label="Xem đường đi trên Google Maps" style="position: absolute; top: 56.2%; left: 31%; width: 38%; height: 6%; border-radius: 999px; border: 1px solid rgba(27, 38, 82, 0.18); background: rgba(232, 243, 247, 0.35); box-shadow: 0 2px 8px rgba(27, 38, 82, 0.06); display: block; z-index: 2; cursor: pointer;"></a><img class="wd-section-img wd-venue-img" loading="lazy" decoding="async" ref="{{revealRef}}" src="./assets/tochuc.png" alt="Hôn lễ của chúng mình sẽ được tổ chức tại Mường Thanh Luxury Hạ Long, 17:30 Thứ Bảy, ngày 28.11.2026" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; mix-blend-mode: multiply;">
       </section>
       
       <section class="wd-section wd-timeline" style="position: relative; width: 100%; aspect-ratio: 768 / 1198;">
