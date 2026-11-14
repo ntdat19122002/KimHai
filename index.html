@@ -230,18 +230,20 @@ body{margin:0}
               </button>
             </div>
           </div>
-          <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
-            <label class="wd-label" for="wd-count" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Bạn sẽ đi cùng mấy người?</span></label>
-            <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
-              <input id="wd-count" class="wd-input wd-field" type="text" inputmode="numeric" placeholder="Nhập số lượng người (bao gồm cả bạn)" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+          <sc-if value="{{yesSelected}}" hint-placeholder-val="{{ true }}">
+            <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
+              <label class="wd-label" for="wd-count" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Bạn sẽ đi cùng mấy người?</span></label>
+              <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
+                <input id="wd-count" class="wd-input wd-field" type="text" inputmode="numeric" placeholder="Nhập số lượng người (bao gồm cả bạn)" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+              </div>
             </div>
-          </div>
-          <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
-            <label class="wd-label" for="wd-msg" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Góc gửi lời thương</span></label>
-            <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
-              <input id="wd-msg" class="wd-input wd-field" type="text" placeholder="Nhập lời nhắn" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+            <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
+              <label class="wd-label" for="wd-msg" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Góc gửi lời thương</span></label>
+              <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
+                <input id="wd-msg" class="wd-input wd-field" type="text" placeholder="Nhập lời nhắn" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+              </div>
             </div>
-          </div>
+          </sc-if>
           <button type="button" class="wd-submit wd-button-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border: 0; margin: 0; border-radius: 8px; overflow: hidden; background-color: transparent; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 8px 16px; cursor: pointer;">
             <span class="wd-submit-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(15px, 4.2cqw, 24px); line-height: 1.4; color: #1B2652; text-align: center; white-space: nowrap; letter-spacing: 0.04em;">Gửi xác nhận</span>
           </button>
@@ -400,6 +402,14 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
   });
 
   document.addEventListener("click", async (e) => {
+    // Ẩn lỗi khi chuyển đổi phương án tham dự
+    const optBtn = e.target.closest(".wd-opt");
+    if (optBtn) {
+      const form = optBtn.closest(".wd-form");
+      const status = form && form.querySelector(".wd-status-msg.wd-status-error");
+      if (status) status.style.display = "none";
+    }
+
     // Nút quay lại xem form từ Thiệp Cảm Ơn
     const backBtn = e.target.closest(".wd-ty-back");
     if (backBtn) {
