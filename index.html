@@ -102,7 +102,7 @@ body{margin:0}
 .wd-gate-door-r{right:0;background-position:left center;box-shadow:-6px 0 20px rgba(0,0,0,0.12)}
 .wd-gate-doors.wd-opening .wd-gate-door-l{transform:translateX(-100%)}
 .wd-gate-doors.wd-opening .wd-gate-door-r{transform:translateX(100%)}
-.wd-gate-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;max-width:440px;height:100%;padding:28px 20px 42px;box-sizing:border-box;text-align:center;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-content{position:absolute;bottom:0;left:0;right:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:clamp(80px,13vh,115px);box-sizing:border-box;text-align:center;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
 .wd-gate-modal.wd-playing-anim .wd-gate-content{opacity:0;transform:translateY(10px)}
 .wd-gate-footer{display:flex;flex-direction:column;align-items:center;gap:8px}
 .wd-gate-hint{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:rgba(255,255,255,0.78);border:1px solid rgba(184,153,110,0.5);border-radius:999px;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:0.12em;color:#4A3E36;font-weight:600;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,0.06);animation:wd-pulse-hint 2.2s infinite ease-in-out}
