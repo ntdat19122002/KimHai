@@ -31,12 +31,14 @@ body{margin:0}
 .wd-opt-selected{background-image:url("./assets/37db554ac2a9459918287b69653e487b.webp")}
 .wd-opt-default{background-image:url("./assets/6e0db3fe2a882cd4269dcb58aa5b4715.webp")}
 .wd-button-bg{background-image:url("./assets/879a534bfd8c995a0f61d5a71d41f316.webp")}
+.wd-field{font-size:clamp(16px,3.86cqw,22px)!important}
 .wd-field::placeholder{color:#7f8997;font-style:italic;font-family:'Cormorant Garamond',serif;opacity:1}
 .wd-field:focus{outline:none}
 .wd-section-img{opacity:0;transform:translateY(60px);transition:opacity .5s ease,transform .5s ease}
 .wd-section-img.wd-in{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){.wd-section-img{opacity:1;transform:none;transition:none}}
-.wd-col{container-type:inline-size;max-width:min(600px, calc(100vh * 414 / 736));max-width:min(600px, calc(100dvh * 414 / 736))}
+.wd-col{container-type:inline-size;width:100%;max-width:500px}
+@media (min-width:601px){.wd-col{max-width:min(600px, calc(100vh * 414 / 736))}}
 @keyframes wd-fade-up{from{opacity:0;transform:translateY(14px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes wd-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
 @keyframes wd-draw-check{from{stroke-dashoffset:48}to{stroke-dashoffset:0}}
@@ -215,7 +217,7 @@ body{margin:0}
           <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
             <label class="wd-label" for="wd-name" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Tên của bạn</span></label>
             <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
-              <input id="wd-name" class="wd-input wd-field" type="text" placeholder="Nhập tên của bạn" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+              <input id="wd-name" class="wd-input wd-field" type="text" placeholder="Nhập tên của bạn" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(16px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
             </div>
           </div>
           <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
@@ -234,14 +236,14 @@ body{margin:0}
           <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
             <label class="wd-label" for="wd-count" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Bạn sẽ đi cùng mấy người?</span></label>
             <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
-              <input id="wd-count" class="wd-input wd-field" type="text" inputmode="numeric" placeholder="Nhập số lượng người (bao gồm cả bạn)" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+              <input id="wd-count" class="wd-input wd-field" type="text" inputmode="numeric" placeholder="Nhập số lượng người (bao gồm cả bạn)" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(16px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
             </div>
           </div>
           <div class="wd-field-group" style="display: flex; flex-direction: column; gap: 4px; width: 100%;">
             <label class="wd-label" for="wd-msg" style="display: flex; gap: 2px; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.35; white-space: nowrap;"><span class="wd-label-text" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #1B2652">Bạn có muốn tham gia party sau lễ không?</span></label>
             <div class="wd-input-box wd-input-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border-radius: 8px; overflow: hidden; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; box-sizing: border-box; padding: 8px 14px;">
               <input id="wd-msg" class="wd-input wd-field" type="text" placeholder="Nếu có, hãy cho chúng mình biết nhé
-" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(14px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
+" style="flex: 1 0 0; min-width: 0; border: 0; padding: 0; margin: 0; background: transparent; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(16px, 3.86cqw, 22px); line-height: 1.4; color: #1B2652;">
             </div>
           </div>
           <button type="button" class="wd-submit wd-button-bg" style="width: 100%; aspect-ratio: 500.76 / 70; border: 0; margin: 0; border-radius: 8px; overflow: hidden; background-color: transparent; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 8px 16px; cursor: pointer;">
