@@ -91,36 +91,26 @@ body{margin:0}
   .wd-stream-body-1,.wd-stream-body-2,.wd-stream-core-1,.wd-stream-core-2,.wd-ripple-1,.wd-ripple-2,.wd-mouth-gleam,.wd-fizz-1,.wd-fizz-2,.wd-fizz-3,.wd-fizz-4,.wd-star-1,.wd-star-2,.wd-star-3,.wd-suit-sway,.wd-dress-sway{animation:none!important}
 }
 
-/* HIỆU ỨNG MỞ CÁNH CỔNG THIỆP CƯỚI & ĐÔI CHIM BỒ CÂU THÁO NƠ */
+/* HIỆU ỨNG MỞ CÁNH CỔNG THIỆP CƯỚI & VIDEO CHIM KÉO DÂY THẬT */
 .wd-gate-modal{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#ECE6D8;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:opacity .5s ease}
 .wd-gate-modal.wd-closing{opacity:0;pointer-events:none}
-.wd-gate-door-l,.wd-gate-door-r{position:absolute;top:0;bottom:0;width:50.5%;background-size:cover;background-repeat:no-repeat;will-change:transform;transition:transform 1.2s cubic-bezier(0.65,0,0.25,1);z-index:1}
-.wd-gate-door-l{left:0;background-image:url('./assets/gate_door_l.jpg');background-position:right center;box-shadow:5px 0 18px rgba(0,0,0,0.12)}
-.wd-gate-door-r{right:0;background-image:url('./assets/gate_door_r.jpg');background-position:left center;box-shadow:-5px 0 18px rgba(0,0,0,0.12)}
-.wd-gate-modal.wd-opening .wd-gate-door-l{transform:translateX(-100%)}
-.wd-gate-modal.wd-opening .wd-gate-door-r{transform:translateX(100%)}
-.wd-gate-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:440px;padding:24px 20px;box-sizing:border-box;text-align:center;pointer-events:none}
-.wd-gate-header{margin-bottom:18px;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;max-width:540px;object-fit:cover;pointer-events:none;transition:opacity .25s ease;z-index:2}
+.wd-gate-doors{position:absolute;inset:0;display:flex;justify-content:center;pointer-events:none;z-index:1;opacity:0;transition:opacity .15s ease}
+.wd-gate-doors.wd-visible{opacity:1}
+.wd-gate-door-l,.wd-gate-door-r{position:absolute;top:0;bottom:0;width:50.5%;background-size:cover;background-repeat:no-repeat;will-change:transform;transition:transform 1.15s cubic-bezier(0.65,0,0.25,1)}
+.wd-gate-door-l{left:0;background-position:right center;box-shadow:6px 0 20px rgba(0,0,0,0.12)}
+.wd-gate-door-r{right:0;background-position:left center;box-shadow:-6px 0 20px rgba(0,0,0,0.12)}
+.wd-gate-doors.wd-opening .wd-gate-door-l{transform:translateX(-100%)}
+.wd-gate-doors.wd-opening .wd-gate-door-r{transform:translateX(100%)}
+.wd-gate-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:100%;max-width:440px;height:84%;padding:28px 20px;box-sizing:border-box;text-align:center;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-modal.wd-playing-anim .wd-gate-content{opacity:0;transform:translateY(-10px)}
 .wd-gate-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.26em;text-transform:uppercase;color:#8C7B6B;font-weight:600;margin-bottom:6px}
 .wd-gate-names{font-family:'Great Vibes','UVN Ke Chuyen 1',cursive;font-size:clamp(34px,8.5vw,44px);color:#1B2652;line-height:1.25;text-shadow:0 1px 2px rgba(27,38,82,0.08)}
 .wd-gate-date{margin-top:6px;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;letter-spacing:0.22em;color:#6B7B8C;font-weight:500}
-.wd-gate-centerpiece{position:relative;width:320px;height:190px;margin:8px 0 24px;display:flex;align-items:center;justify-content:center}
-.wd-gate-bow{position:absolute;width:230px;height:230px;object-fit:contain;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .7s cubic-bezier(0.2,0.8,0.3,1),opacity .55s ease;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.06))}
-.wd-gate-dove-l{position:absolute;width:125px;height:125px;object-fit:contain;left:12px;top:-8px;transform-origin:center center;animation:wd-dove-hover-l 2.8s ease-in-out infinite alternate;transition:transform .85s cubic-bezier(0.2,0.8,0.3,1),opacity .75s ease;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.06))}
-.wd-gate-dove-r{position:absolute;width:125px;height:125px;object-fit:contain;right:12px;top:-8px;transform-origin:center center;animation:wd-dove-hover-r 2.8s ease-in-out 0.4s infinite alternate;transition:transform .85s cubic-bezier(0.2,0.8,0.3,1),opacity .75s ease;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.06))}
-@keyframes wd-dove-hover-l{0%{transform:translateY(0px) rotate(0deg)}100%{transform:translateY(-6px) rotate(-2deg)}}
-@keyframes wd-dove-hover-r{0%{transform:translateY(0px) rotate(0deg)}100%{transform:translateY(-6px) rotate(2deg)}}
-.wd-gate-modal.wd-untying .wd-gate-dove-l{animation:none;transform:translate(-140px,-80px) rotate(-16deg) scale(0.85);opacity:0}
-.wd-gate-modal.wd-untying .wd-gate-dove-r{animation:none;transform:translate(140px,-80px) rotate(16deg) scale(0.85);opacity:0}
-.wd-gate-modal.wd-untying .wd-gate-bow{transform:translate(-50%,-50%) scale(1.18) rotate(4deg);opacity:0}
-.wd-gate-modal.wd-untying .wd-gate-header,.wd-gate-modal.wd-untying .wd-gate-footer{opacity:0;transform:translateY(-8px)}
-.wd-gate-footer{display:flex;flex-direction:column;align-items:center;gap:8px;transition:opacity .4s ease,transform .4s ease}
-.wd-gate-hint{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:rgba(255,255,255,0.75);border:1px solid rgba(184,153,110,0.5);border-radius:999px;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:0.12em;color:#4A3E36;font-weight:600;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,0.06);animation:wd-pulse-hint 2.2s infinite ease-in-out}
+.wd-gate-footer{display:flex;flex-direction:column;align-items:center;gap:8px}
+.wd-gate-hint{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:rgba(255,255,255,0.78);border:1px solid rgba(184,153,110,0.5);border-radius:999px;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:0.12em;color:#4A3E36;font-weight:600;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,0.06);animation:wd-pulse-hint 2.2s infinite ease-in-out}
 @keyframes wd-pulse-hint{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(0,0,0,0.06)}50%{transform:scale(1.03);box-shadow:0 6px 20px rgba(184,153,110,0.28)}}
 .wd-gate-tip{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:13px;color:#8C7B6B}
-.wd-gate-sparkles{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:5}
-.wd-gate-sparkle{position:absolute;top:50%;left:50%;pointer-events:none;font-size:14px;color:#D4AF37;text-shadow:0 0 6px #FFF5D6;opacity:0;animation:wd-sparkle-float .9s cubic-bezier(0.2,0.8,0.3,1) forwards}
-@keyframes wd-sparkle-float{0%{transform:translate(-50%,-50%) scale(0.4);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot));opacity:0}}
 
 /* NÚT NHẠC NỔI TINH TẾ SAU KHI MỞ THIỆP */
 .wd-music-btn{position:fixed;top:18px;right:max(16px,calc(50vw - min(270px,calc(50vh * 414 / 736)) + 16px));width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(212,175,55,0.7);box-shadow:0 4px 18px rgba(27,38,82,0.18),0 2px 6px rgba(0,0,0,0.08);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:99999;transition:transform .25s cubic-bezier(0.34,1.56,0.64,1),box-shadow .25s ease,border-color .25s ease,opacity .4s ease;user-select:none;-webkit-tap-highlight-color:transparent;outline:none;box-sizing:border-box;padding:0}
@@ -583,21 +573,23 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 })();
 </script>
 
-<!-- WEDDING GATEFOLD OPENING MODAL (CÁNH CỔNG THIỆP & ĐÔI CHIM BỒ CÂU THÁO NƠ) -->
+<!-- WEDDING GATEFOLD OPENING MODAL (VIDEO CHIM KÉO DÂY & MỞ CÁNH CỔNG THIỆP) -->
 <div id="wdGateModal" class="wd-gate-modal" role="button" tabindex="0" aria-label="Chạm nhẹ để mở thiệp cưới">
-  <div class="wd-gate-door-l"></div>
-  <div class="wd-gate-door-r"></div>
-  <div class="wd-gate-content">
+  <!-- Cặp cánh cổng trượt mở khi kết thúc kéo dây -->
+  <div class="wd-gate-doors" id="wdGateDoors">
+    <div class="wd-gate-door-l" style="background-image: url('./assets/gate_door_l.jpg');"></div>
+    <div class="wd-gate-door-r" style="background-image: url('./assets/gate_door_r.jpg');"></div>
+  </div>
+
+  <!-- Video hoạt cảnh chú chim bay vào kéo dây tháo nơ mượt mà -->
+  <video id="wdGateVideo" class="wd-gate-video" src="./assets/gate_opening.mp4" poster="./assets/gate_cover.jpg" playsinline muted preload="auto"></video>
+
+  <!-- Lớp phủ thông tin lời mời & nút hướng dẫn chạm mở -->
+  <div class="wd-gate-content" id="wdGateContent">
     <div class="wd-gate-header">
       <div class="wd-gate-sub">The Wedding of</div>
       <div class="wd-gate-names">Hải Lê &amp; Kim Anh</div>
       <div class="wd-gate-date">28 • 11 • 2026</div>
-    </div>
-    <div class="wd-gate-centerpiece">
-      <img src="./assets/bow_ribbon.png" class="wd-gate-bow" alt="" aria-hidden="true">
-      <img src="./assets/dove_left.png" class="wd-gate-dove-l" alt="" aria-hidden="true">
-      <img src="./assets/dove_right.png" class="wd-gate-dove-r" alt="" aria-hidden="true">
-      <div class="wd-gate-sparkles" id="wdGateSparkles"></div>
     </div>
     <div class="wd-gate-footer">
       <div class="wd-gate-hint">✦ Chạm nhẹ để mở thiệp ✦</div>
@@ -634,7 +626,8 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 <script>
 (() => {
   const modal = document.getElementById("wdGateModal");
-  const sparkles = document.getElementById("wdGateSparkles");
+  const video = document.getElementById("wdGateVideo");
+  const doors = document.getElementById("wdGateDoors");
   const audio = document.getElementById("wdBgMusic");
   const musicBtn = document.getElementById("wdMusicBtn");
 
@@ -645,28 +638,6 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 
   // Khóa cuộn trang khi cánh cổng đang đóng
   try { document.body.style.overflow = "hidden"; } catch (err) {}
-
-  function spawnSparkles(container) {
-    if (!container) return;
-    const symbols = ["✦", "✧", "★", "❦", "♡"];
-    for (let i = 0; i < 20; i++) {
-      const s = document.createElement("span");
-      s.className = "wd-gate-sparkle";
-      s.textContent = symbols[i % symbols.length];
-      const angle = (i / 20) * 360 + (Math.random() * 20 - 10);
-      const dist = 45 + Math.random() * 85;
-      const rad = (angle * Math.PI) / 180;
-      const dx = Math.cos(rad) * dist + "px";
-      const dy = Math.sin(rad) * dist + "px";
-      const rot = (Math.random() * 360 - 180) + "deg";
-      s.style.setProperty("--dx", dx);
-      s.style.setProperty("--dy", dy);
-      s.style.setProperty("--rot", rot);
-      s.style.animationDelay = (Math.random() * 0.12).toFixed(2) + "s";
-      container.appendChild(s);
-      setTimeout(() => s.remove(), 1200);
-    }
-  }
 
   function updateMusicUI(playing) {
     if (!musicBtn) return;
@@ -712,40 +683,69 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
       e.preventDefault();
     }
 
-    // 1. Phát nhạc ngay lập tức trong cử chỉ chạm của người dùng
+    // 1. Phát nhạc nền ngay lập tức theo cử chỉ chạm
     playAudio();
 
-    // 2. Hiệu ứng chim bay mở nơ và bụi phát sáng
-    if (modal) modal.classList.add("wd-untying");
-    spawnSparkles(sparkles);
-
-    // 3. Sau 350ms: Cánh cổng trượt mở sang 2 bên
-    setTimeout(() => {
-      if (modal) modal.classList.add("wd-opening");
-    }, 350);
-
-    // 4. Sau 1100ms: Bắt đầu video mở màn
-    setTimeout(() => {
-      if (modal) modal.classList.add("wd-closing");
-      window._envelopeIsOpen = true;
-
-      const heroVideo = document.querySelector(".wd-hero-video");
-      if (heroVideo) {
-        heroVideo.currentTime = 0;
-        heroVideo.play().catch(() => {});
+    // 2. Ẩn chữ tiêu đề & phát video chim kéo dây tháo nơ mượt mà
+    if (modal) modal.classList.add("wd-playing-anim");
+    if (video) {
+      video.currentTime = 0;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          triggerDoorSlide();
+        });
       }
-    }, 1100);
+    }
 
-    // 5. Sau 1500ms: Ẩn hoàn toàn overlay & khôi phục cuộn trang
-    setTimeout(() => {
-      if (modal) modal.style.display = "none";
-      try { document.body.style.overflow = ""; } catch (err) {}
+    let doorsTriggered = false;
+    function triggerDoorSlide() {
+      if (doorsTriggered) return;
+      doorsTriggered = true;
 
-      // Hiển thị nút điều khiển nhạc nổi nhỏ gọn góc phải
-      if (musicBtn) {
-        musicBtn.style.display = "flex";
-      }
-    }, 1500);
+      // Hiện 2 cánh cửa (khớp từng pixel với frame cuối của video) và ẩn video
+      if (doors) doors.classList.add("wd-visible");
+      if (video) video.style.opacity = "0";
+
+      // Kích hoạt trượt mở 2 cánh cửa sang trái và phải
+      requestAnimationFrame(() => {
+        if (doors) doors.classList.add("wd-opening");
+      });
+
+      // Sau 800ms: Bắt đầu video mở màn của thiệp cưới
+      setTimeout(() => {
+        window._envelopeIsOpen = true;
+        const heroVideo = document.querySelector(".wd-hero-video");
+        if (heroVideo) {
+          heroVideo.currentTime = 0;
+          heroVideo.play().catch(() => {});
+        }
+      }, 800);
+
+      // Sau 1300ms: Ẩn hoàn toàn overlay & khôi phục cuộn trang
+      setTimeout(() => {
+        if (modal) {
+          modal.classList.add("wd-closing");
+          setTimeout(() => {
+            modal.style.display = "none";
+            try { document.body.style.overflow = ""; } catch (err) {}
+            if (musicBtn) musicBtn.style.display = "flex";
+          }, 400);
+        }
+      }, 1300);
+    }
+
+    if (video) {
+      video.addEventListener("timeupdate", () => {
+        if (video.currentTime >= 3.2) {
+          triggerDoorSlide();
+        }
+      });
+      video.addEventListener("ended", triggerDoorSlide);
+      setTimeout(triggerDoorSlide, 3600);
+    } else {
+      setTimeout(triggerDoorSlide, 800);
+    }
   }
 
   if (modal) {
