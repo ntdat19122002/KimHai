@@ -102,11 +102,8 @@ body{margin:0}
 .wd-gate-door-r{right:0;background-position:left center;box-shadow:-6px 0 20px rgba(0,0,0,0.12)}
 .wd-gate-doors.wd-opening .wd-gate-door-l{transform:translateX(-100%)}
 .wd-gate-doors.wd-opening .wd-gate-door-r{transform:translateX(100%)}
-.wd-gate-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:100%;max-width:440px;height:84%;padding:28px 20px;box-sizing:border-box;text-align:center;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
-.wd-gate-modal.wd-playing-anim .wd-gate-content{opacity:0;transform:translateY(-10px)}
-.wd-gate-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.26em;text-transform:uppercase;color:#8C7B6B;font-weight:600;margin-bottom:6px}
-.wd-gate-names{font-family:'Great Vibes','UVN Ke Chuyen 1',cursive;font-size:clamp(34px,8.5vw,44px);color:#1B2652;line-height:1.25;text-shadow:0 1px 2px rgba(27,38,82,0.08)}
-.wd-gate-date{margin-top:6px;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;letter-spacing:0.22em;color:#6B7B8C;font-weight:500}
+.wd-gate-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;max-width:440px;height:100%;padding:28px 20px 42px;box-sizing:border-box;text-align:center;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-modal.wd-playing-anim .wd-gate-content{opacity:0;transform:translateY(10px)}
 .wd-gate-footer{display:flex;flex-direction:column;align-items:center;gap:8px}
 .wd-gate-hint{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:rgba(255,255,255,0.78);border:1px solid rgba(184,153,110,0.5);border-radius:999px;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:0.12em;color:#4A3E36;font-weight:600;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,0.06);animation:wd-pulse-hint 2.2s infinite ease-in-out}
 @keyframes wd-pulse-hint{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(0,0,0,0.06)}50%{transform:scale(1.03);box-shadow:0 6px 20px rgba(184,153,110,0.28)}}
@@ -571,13 +568,8 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
   <!-- Video hoạt cảnh chú chim bay vào kéo dây tháo nơ mượt mà -->
   <video id="wdGateVideo" class="wd-gate-video" src="./assets/gate_opening.mp4" poster="./assets/gate_cover.jpg" playsinline muted preload="auto"></video>
 
-  <!-- Lớp phủ thông tin lời mời & nút hướng dẫn chạm mở -->
+  <!-- Lớp phủ nút hướng dẫn chạm mở -->
   <div class="wd-gate-content" id="wdGateContent">
-    <div class="wd-gate-header">
-      <div class="wd-gate-sub">The Wedding of</div>
-      <div class="wd-gate-names">Hải Lê &amp; Kim Anh</div>
-      <div class="wd-gate-date">28 • 11 • 2026</div>
-    </div>
     <div class="wd-gate-footer">
       <div class="wd-gate-hint">✦ Chạm nhẹ để mở thiệp ✦</div>
       <div class="wd-gate-tip">♫ Bật âm thanh để nghe trọn vẹn</div>
