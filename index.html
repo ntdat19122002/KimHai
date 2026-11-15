@@ -91,55 +91,36 @@ body{margin:0}
   .wd-stream-body-1,.wd-stream-body-2,.wd-stream-core-1,.wd-stream-core-2,.wd-ripple-1,.wd-ripple-2,.wd-mouth-gleam,.wd-fizz-1,.wd-fizz-2,.wd-fizz-3,.wd-fizz-4,.wd-star-1,.wd-star-2,.wd-star-3,.wd-suit-sway,.wd-dress-sway{animation:none!important}
 }
 
-/* HIỆU ỨNG MỞ THIỆP CƯỚI & THÁO NƠ LỤA VÀNG */
-.wd-env-modal{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;overflow:hidden;background:radial-gradient(circle at 50% 35%, rgba(250, 247, 242, 0.98) 0%, rgba(228, 238, 245, 0.98) 55%, rgba(195, 212, 228, 0.99) 100%);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:opacity .8s cubic-bezier(0.4,0,0.2,1),transform .8s cubic-bezier(0.4,0,0.2,1),filter .8s cubic-bezier(0.4,0,0.2,1)}
-.wd-env-modal.wd-env-closing{opacity:0;transform:scale(1.06);filter:blur(6px);pointer-events:none}
-.wd-env-wrapper{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:420px;margin:auto;user-select:none}
-.wd-env-greeting{text-align:center;margin-bottom:20px;animation:wd-fade-up .8s ease both}
-.wd-env-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:#C59B5F;font-weight:600;margin-bottom:4px}
-.wd-env-names{font-family:'Great Vibes','UVN Ke Chuyen 1',cursive;font-size:clamp(32px,8.5vw,42px);color:#1B2652;line-height:1.25;text-shadow:0 1px 2px rgba(27,38,82,0.08)}
-.wd-env-date-tag{display:inline-flex;align-items:center;gap:8px;margin-top:4px;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;letter-spacing:0.18em;color:#556987;font-weight:500}
-.wd-env-date-tag::before,.wd-env-date-tag::after{content:"";display:inline-block;width:24px;height:1px;background:linear-gradient(90deg,transparent,#C59B5F,transparent)}
-.wd-env-card-container{position:relative;width:100%;display:flex;justify-content:center;perspective:1200px}
-.wd-env-box{position:relative;width:clamp(290px,86vw,360px);height:clamp(190px,56vw,235px);background:#FDFBF7;border-radius:12px;box-shadow:0 20px 48px rgba(27,38,82,0.22),0 6px 14px rgba(0,0,0,0.08),inset 0 0 0 1px rgba(212,175,55,0.35);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;transform-style:preserve-3d}
-.wd-env-box:hover{transform:translateY(-2px);box-shadow:0 24px 54px rgba(27,38,82,0.28),0 8px 18px rgba(0,0,0,0.1),inset 0 0 0 1px rgba(212,175,55,0.5)}
-.wd-env-back{position:absolute;inset:0;border-radius:12px;background:#EFECE3;overflow:hidden;box-shadow:inset 0 8px 16px rgba(27,38,82,0.08)}
-.wd-env-letter{position:absolute;left:5%;right:5%;bottom:8px;height:90%;background:#FFFFFF;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1),0 0 0 1px rgba(212,175,55,0.3);padding:12px 16px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:transform .8s cubic-bezier(0.34,1.3,0.64,1);transform:translateY(0);z-index:1}
-.wd-env-letter-head{font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7B8B9E;margin-bottom:2px}
-.wd-env-letter-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(16px,4.2vw,20px);font-weight:700;color:#1B2652;letter-spacing:0.06em}
-.wd-env-letter-line{width:40px;height:1px;background:#C59B5F;margin:6px auto}
-.wd-env-letter-date{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;letter-spacing:0.14em;color:#C59B5F;font-weight:600}
-.wd-env-pocket{position:absolute;inset:0;border-radius:12px;overflow:hidden;pointer-events:none;z-index:2}
-.wd-env-pocket-svg{width:100%;height:100%;display:block}
-.wd-env-flap{position:absolute;top:0;left:0;width:100%;height:55%;transform-origin:top center;transition:transform .75s cubic-bezier(0.4,0,0.2,1),z-index .2s step-end;transform:rotateX(0deg);z-index:4;backface-visibility:visible;pointer-events:none}
-.wd-env-flap-svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 5px rgba(27,38,82,0.15))}
-.wd-env-ribbon-h{position:absolute;top:50%;left:0;width:100%;height:22px;transform:translateY(-50%);background:linear-gradient(180deg,#FDF0C7 0%,#D8B059 40%,#B8892A 70%,#8C5F14 100%);box-shadow:0 3px 8px rgba(27,38,82,0.22),inset 0 1px 0 rgba(255,255,255,0.5),inset 0 -1px 0 rgba(0,0,0,0.2);z-index:5;pointer-events:none;transition:transform .5s cubic-bezier(0.4,0,0.2,1),opacity .5s ease;transform-origin:center center}
-.wd-env-bow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(140px,40vw,175px);height:clamp(94px,27vw,118px);z-index:6;pointer-events:none;transition:transform .4s ease}
-.wd-bow-svg{width:100%;height:100%;display:block}
-.wd-bow-knot{transition:transform .4s cubic-bezier(0.34,1.56,0.64,1),opacity .4s ease;transform-origin:90px 52px}
-.wd-bow-loop-l{transition:transform .55s cubic-bezier(0.2,0.8,0.4,1),opacity .45s ease;transform-origin:90px 52px}
-.wd-bow-loop-r{transition:transform .55s cubic-bezier(0.2,0.8,0.4,1),opacity .45s ease;transform-origin:90px 52px}
-.wd-bow-tail-l{transition:transform .6s cubic-bezier(0.2,0.8,0.4,1),opacity .45s ease;transform-origin:85px 55px}
-.wd-bow-tail-r{transition:transform .6s cubic-bezier(0.2,0.8,0.4,1),opacity .45s ease;transform-origin:95px 55px}
-.wd-env-box.wd-untying .wd-bow-knot{transform:scale(1.35) rotate(10deg);opacity:0}
-.wd-env-box.wd-untying .wd-bow-loop-l{transform:translate(-50px,-15px) scale(0.3) rotate(-35deg);opacity:0}
-.wd-env-box.wd-untying .wd-bow-loop-r{transform:translate(50px,-15px) scale(0.3) rotate(35deg);opacity:0}
-.wd-env-box.wd-untying .wd-bow-tail-l{transform:translate(-35px,50px) rotate(-25deg);opacity:0}
-.wd-env-box.wd-untying .wd-bow-tail-r{transform:translate(35px,50px) rotate(25deg);opacity:0}
-.wd-env-box.wd-untying .wd-env-ribbon-h{transform:translateY(-50%) scaleX(0);opacity:0}
-.wd-env-box.wd-opening .wd-env-flap{transform:rotateX(180deg);z-index:1;transition-delay:.1s}
-.wd-env-box.wd-opening .wd-env-letter{transform:translateY(-85px) scale(1.05);box-shadow:0 16px 36px rgba(27,38,82,0.25);transition-delay:.28s;z-index:3}
-.wd-env-sparkles{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:7}
-.wd-sparkle{position:absolute;top:50%;left:50%;pointer-events:none;font-size:14px;color:#D4AF37;text-shadow:0 0 6px #FFF5D6;opacity:0;animation:wd-sparkle-float .9s cubic-bezier(0.2,0.8,0.3,1) forwards}
+/* HIỆU ỨNG MỞ CÁNH CỔNG THIỆP CƯỚI & ĐÔI CHIM BỒ CÂU THÁO NƠ */
+.wd-gate-modal{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#ECE6D8;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:opacity .5s ease}
+.wd-gate-modal.wd-closing{opacity:0;pointer-events:none}
+.wd-gate-door-l,.wd-gate-door-r{position:absolute;top:0;bottom:0;width:50.5%;background-size:cover;background-repeat:no-repeat;will-change:transform;transition:transform 1.2s cubic-bezier(0.65,0,0.25,1);z-index:1}
+.wd-gate-door-l{left:0;background-image:url('./assets/gate_door_l.jpg');background-position:right center;box-shadow:5px 0 18px rgba(0,0,0,0.12)}
+.wd-gate-door-r{right:0;background-image:url('./assets/gate_door_r.jpg');background-position:left center;box-shadow:-5px 0 18px rgba(0,0,0,0.12)}
+.wd-gate-modal.wd-opening .wd-gate-door-l{transform:translateX(-100%)}
+.wd-gate-modal.wd-opening .wd-gate-door-r{transform:translateX(100%)}
+.wd-gate-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:440px;padding:24px 20px;box-sizing:border-box;text-align:center;pointer-events:none}
+.wd-gate-header{margin-bottom:18px;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:13px;letter-spacing:0.26em;text-transform:uppercase;color:#8C7B6B;font-weight:600;margin-bottom:6px}
+.wd-gate-names{font-family:'Great Vibes','UVN Ke Chuyen 1',cursive;font-size:clamp(34px,8.5vw,44px);color:#1B2652;line-height:1.25;text-shadow:0 1px 2px rgba(27,38,82,0.08)}
+.wd-gate-date{margin-top:6px;font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;letter-spacing:0.22em;color:#6B7B8C;font-weight:500}
+.wd-gate-centerpiece{position:relative;width:320px;height:190px;margin:8px 0 24px;display:flex;align-items:center;justify-content:center}
+.wd-gate-bow{position:absolute;width:230px;height:230px;object-fit:contain;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .7s cubic-bezier(0.2,0.8,0.3,1),opacity .55s ease;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.06))}
+.wd-gate-dove-l{position:absolute;width:125px;height:125px;object-fit:contain;left:12px;top:-8px;transform-origin:center center;animation:wd-dove-hover-l 2.8s ease-in-out infinite alternate;transition:transform .85s cubic-bezier(0.2,0.8,0.3,1),opacity .75s ease;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.06))}
+.wd-gate-dove-r{position:absolute;width:125px;height:125px;object-fit:contain;right:12px;top:-8px;transform-origin:center center;animation:wd-dove-hover-r 2.8s ease-in-out 0.4s infinite alternate;transition:transform .85s cubic-bezier(0.2,0.8,0.3,1),opacity .75s ease;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.06))}
+@keyframes wd-dove-hover-l{0%{transform:translateY(0px) rotate(0deg)}100%{transform:translateY(-6px) rotate(-2deg)}}
+@keyframes wd-dove-hover-r{0%{transform:translateY(0px) rotate(0deg)}100%{transform:translateY(-6px) rotate(2deg)}}
+.wd-gate-modal.wd-untying .wd-gate-dove-l{animation:none;transform:translate(-140px,-80px) rotate(-16deg) scale(0.85);opacity:0}
+.wd-gate-modal.wd-untying .wd-gate-dove-r{animation:none;transform:translate(140px,-80px) rotate(16deg) scale(0.85);opacity:0}
+.wd-gate-modal.wd-untying .wd-gate-bow{transform:translate(-50%,-50%) scale(1.18) rotate(4deg);opacity:0}
+.wd-gate-modal.wd-untying .wd-gate-header,.wd-gate-modal.wd-untying .wd-gate-footer{opacity:0;transform:translateY(-8px)}
+.wd-gate-footer{display:flex;flex-direction:column;align-items:center;gap:8px;transition:opacity .4s ease,transform .4s ease}
+.wd-gate-hint{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;background:rgba(255,255,255,0.75);border:1px solid rgba(184,153,110,0.5);border-radius:999px;font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;letter-spacing:0.12em;color:#4A3E36;font-weight:600;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,0.06);animation:wd-pulse-hint 2.2s infinite ease-in-out}
+@keyframes wd-pulse-hint{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(0,0,0,0.06)}50%{transform:scale(1.03);box-shadow:0 6px 20px rgba(184,153,110,0.28)}}
+.wd-gate-tip{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:13px;color:#8C7B6B}
+.wd-gate-sparkles{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:5}
+.wd-gate-sparkle{position:absolute;top:50%;left:50%;pointer-events:none;font-size:14px;color:#D4AF37;text-shadow:0 0 6px #FFF5D6;opacity:0;animation:wd-sparkle-float .9s cubic-bezier(0.2,0.8,0.3,1) forwards}
 @keyframes wd-sparkle-float{0%{transform:translate(-50%,-50%) scale(0.4);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot));opacity:0}}
-.wd-env-actions{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px;animation:wd-fade-up .9s .2s ease both}
-.wd-env-open-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 32px;background:linear-gradient(135deg,#1B2652 0%,#29386E 100%);color:#FFF6D1;font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:1.5px solid #D4AF37;border-radius:999px;box-shadow:0 6px 20px rgba(27,38,82,0.25),0 0 12px rgba(212,175,55,0.3);cursor:pointer;overflow:hidden;transition:all .3s cubic-bezier(0.34,1.56,0.64,1);outline:none}
-.wd-env-open-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 28px rgba(27,38,82,0.32),0 0 18px rgba(212,175,55,0.5);border-color:#FCE08B;color:#FFFFFF}
-.wd-env-open-btn:active{transform:scale(0.97)}
-.wd-env-btn-shimmer{position:absolute;top:0;left:-120%;width:80%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);transform:skewX(-25deg);animation:wd-shimmer 2.8s infinite;pointer-events:none}
-@keyframes wd-shimmer{0%{left:-120%}40%,100%{left:180%}}
-.wd-env-tip{display:flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:13.5px;color:#6A7C95}
-.wd-env-tip-icon{color:#C59B5F;font-size:13px;animation:wd-pulse 2s infinite}
 
 /* NÚT NHẠC NỔI TINH TẾ SAU KHI MỞ THIỆP */
 .wd-music-btn{position:fixed;top:18px;right:max(16px,calc(50vw - min(270px,calc(50vh * 414 / 736)) + 16px));width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(212,175,55,0.7);box-shadow:0 4px 18px rgba(27,38,82,0.18),0 2px 6px rgba(0,0,0,0.08);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:99999;transition:transform .25s cubic-bezier(0.34,1.56,0.64,1),box-shadow .25s ease,border-color .25s ease,opacity .4s ease;user-select:none;-webkit-tap-highlight-color:transparent;outline:none;box-sizing:border-box;padding:0}
@@ -602,115 +583,25 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 })();
 </script>
 
-<!-- WEDDING ENVELOPE MODAL (HIỆU ỨNG MỞ THIỆP & THÁO NƠ LỤA VÀNG) -->
-<div id="wdEnvelopeModal" class="wd-env-modal" aria-label="Mở thiệp cưới Hải Lê & Kim Anh">
-  <div class="wd-env-wrapper">
-    <!-- Tiêu đề lời mời -->
-    <div class="wd-env-greeting">
-      <div class="wd-env-sub">Wedding Invitation</div>
-      <div class="wd-env-names">Hải Lê &amp; Kim Anh</div>
-      <div class="wd-env-date-tag">28 • 11 • 2026</div>
+<!-- WEDDING GATEFOLD OPENING MODAL (CÁNH CỔNG THIỆP & ĐÔI CHIM BỒ CÂU THÁO NƠ) -->
+<div id="wdGateModal" class="wd-gate-modal" role="button" tabindex="0" aria-label="Chạm nhẹ để mở thiệp cưới">
+  <div class="wd-gate-door-l"></div>
+  <div class="wd-gate-door-r"></div>
+  <div class="wd-gate-content">
+    <div class="wd-gate-header">
+      <div class="wd-gate-sub">The Wedding of</div>
+      <div class="wd-gate-names">Hải Lê &amp; Kim Anh</div>
+      <div class="wd-gate-date">28 • 11 • 2026</div>
     </div>
-
-    <!-- Bao thư 3D với nơ lụa vàng -->
-    <div class="wd-env-card-container">
-      <div class="wd-env-box" id="wdEnvelopeBox" role="button" tabindex="0" aria-label="Chạm vào bao thư để tháo nơ và mở thiệp">
-        <!-- Lưng bao thư & Thư bên trong -->
-        <div class="wd-env-back">
-          <div class="wd-env-letter">
-            <div class="wd-env-letter-head">Trân trọng kính mời</div>
-            <div class="wd-env-letter-title">HẢI LÊ &amp; KIM ANH</div>
-            <div class="wd-env-letter-line"></div>
-            <div class="wd-env-letter-date">28 • 11 • 2026</div>
-          </div>
-        </div>
-
-        <!-- Nắp phong bì (Lật mở ngược lên trên) -->
-        <div class="wd-env-flap">
-          <svg viewBox="0 0 340 120" class="wd-env-flap-svg" preserveAspectRatio="none">
-            <polygon points="0,0 340,0 170,120" fill="#FDFBF7" stroke="rgba(212,175,55,0.45)" stroke-width="1.2"/>
-            <polygon points="10,2 330,2 170,114" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="0.8" stroke-dasharray="4,4"/>
-          </svg>
-        </div>
-
-        <!-- Túi gập phía trước của phong bì -->
-        <div class="wd-env-pocket">
-          <svg viewBox="0 0 340 220" class="wd-env-pocket-svg" preserveAspectRatio="none">
-            <polygon points="0,0 170,120 0,220" fill="#F7F4EC" stroke="rgba(212,175,55,0.3)" stroke-width="0.8"/>
-            <polygon points="340,0 170,120 340,220" fill="#F4EFE5" stroke="rgba(212,175,55,0.3)" stroke-width="0.8"/>
-            <polygon points="0,220 340,220 170,110" fill="#FDFBF7" stroke="rgba(212,175,55,0.45)" stroke-width="1"/>
-            <polygon points="12,216 328,216 170,116" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="0.8" stroke-dasharray="4,4"/>
-          </svg>
-        </div>
-
-        <!-- Dải ruy băng lụa vàng ngang -->
-        <div class="wd-env-ribbon-h"></div>
-
-        <!-- Nơ lụa thắt vàng sang trọng kèm mặt sáp lồng chữ H & K -->
-        <div class="wd-env-bow" id="wdEnvBow">
-          <svg viewBox="0 0 180 120" class="wd-bow-svg">
-            <defs>
-              <linearGradient id="wdGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFF2C2"/>
-                <stop offset="25%" stop-color="#E5C16C"/>
-                <stop offset="65%" stop-color="#BA892F"/>
-                <stop offset="100%" stop-color="#8F6315"/>
-              </linearGradient>
-              <linearGradient id="wdGoldShine" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFFBF0"/>
-                <stop offset="45%" stop-color="#E8C87A"/>
-                <stop offset="100%" stop-color="#A57520"/>
-              </linearGradient>
-              <filter id="wdBowShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1B2652" flood-opacity="0.32"/>
-              </filter>
-            </defs>
-
-            <!-- Đuôi nơ rủ xuống -->
-            <g class="wd-bow-tails" filter="url(#wdBowShadow)">
-              <path class="wd-bow-tail-l" d="M82,55 C74,72 65,92 56,116 L70,107 L84,117 C85,95 86,74 88,55 Z" fill="url(#wdGoldGrad)"/>
-              <path class="wd-bow-tail-r" d="M98,55 C106,72 115,92 124,116 L110,107 L96,117 C95,95 94,74 92,55 Z" fill="url(#wdGoldGrad)"/>
-            </g>
-
-            <!-- Cánh nơ uốn lượn mềm mại -->
-            <g class="wd-bow-loops" filter="url(#wdBowShadow)">
-              <g class="wd-bow-loop-l">
-                <path d="M90,52 C65,30 30,26 25,44 C20,60 52,68 88,54 Z" fill="url(#wdGoldShine)"/>
-                <path d="M86,52 C68,40 45,36 40,44 C34,53 55,59 84,53 Z" fill="url(#wdGoldGrad)" opacity="0.7"/>
-              </g>
-              <g class="wd-bow-loop-r">
-                <path d="M90,52 C115,30 150,26 155,44 C160,60 128,68 92,54 Z" fill="url(#wdGoldShine)"/>
-                <path d="M94,52 C112,40 135,36 140,44 C146,53 125,59 96,53 Z" fill="url(#wdGoldGrad)" opacity="0.7"/>
-              </g>
-            </g>
-
-            <!-- Nút thắt trung tâm / Dấu ấn sáp hoàng gia khắc chữ H&K -->
-            <g class="wd-bow-knot" filter="url(#wdBowShadow)">
-              <circle cx="90" cy="52" r="14" fill="url(#wdGoldShine)" stroke="#FFF" stroke-width="0.8"/>
-              <circle cx="90" cy="52" r="11.5" fill="#1B2652"/>
-              <circle cx="90" cy="52" r="10.2" fill="none" stroke="rgba(212,175,55,0.6)" stroke-width="0.7" stroke-dasharray="2,1.5"/>
-              <text x="90" y="55.5" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="8.5" font-weight="700" fill="#FCE08B" letter-spacing="0.5">H&amp;K</text>
-            </g>
-          </svg>
-        </div>
-
-        <!-- Bụi vàng phát sáng tỏa ra khi tháo nơ -->
-        <div class="wd-env-sparkles" id="wdEnvSparkles"></div>
-      </div>
+    <div class="wd-gate-centerpiece">
+      <img src="./assets/bow_ribbon.png" class="wd-gate-bow" alt="" aria-hidden="true">
+      <img src="./assets/dove_left.png" class="wd-gate-dove-l" alt="" aria-hidden="true">
+      <img src="./assets/dove_right.png" class="wd-gate-dove-r" alt="" aria-hidden="true">
+      <div class="wd-gate-sparkles" id="wdGateSparkles"></div>
     </div>
-
-    <!-- Nút bấm và hướng dẫn -->
-    <div class="wd-env-actions">
-      <button class="wd-env-open-btn" id="wdOpenBtn" type="button" aria-label="Chạm để mở thiệp cưới">
-        <span class="wd-env-btn-shimmer"></span>
-        <span class="wd-env-btn-icon">❦</span>
-        <span class="wd-env-btn-text">Chạm để mở thiệp</span>
-        <span class="wd-env-btn-icon">❦</span>
-      </button>
-      <div class="wd-env-tip">
-        <span class="wd-env-tip-icon">♫</span>
-        <span class="wd-env-tip-text">Bật âm thanh để có trải nghiệm trọn vẹn</span>
-      </div>
+    <div class="wd-gate-footer">
+      <div class="wd-gate-hint">✦ Chạm nhẹ để mở thiệp ✦</div>
+      <div class="wd-gate-tip">♫ Bật âm thanh để nghe trọn vẹn</div>
     </div>
   </div>
 </div>
@@ -736,16 +627,14 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
   <div class="wd-music-slash"></div>
 </div>
 
-<audio id="wdBgMusic" loop preload="auto" playsinline style="display:none;">
+<audio id="wdBgMusic" loop preload="auto" playsinline style="display:none;" src="./assets/music.m4a">
   <source src="./assets/music.m4a" type="audio/mp4">
 </audio>
 
 <script>
 (() => {
-  const modal = document.getElementById("wdEnvelopeModal");
-  const box = document.getElementById("wdEnvelopeBox");
-  const openBtn = document.getElementById("wdOpenBtn");
-  const sparkles = document.getElementById("wdEnvSparkles");
+  const modal = document.getElementById("wdGateModal");
+  const sparkles = document.getElementById("wdGateSparkles");
   const audio = document.getElementById("wdBgMusic");
   const musicBtn = document.getElementById("wdMusicBtn");
 
@@ -754,7 +643,7 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
   let userManuallyPaused = false;
   if (audio) audio.volume = 0.85;
 
-  // Khóa cuộn trang khi bao thư đang hiển thị
+  // Khóa cuộn trang khi cánh cổng đang đóng
   try { document.body.style.overflow = "hidden"; } catch (err) {}
 
   function spawnSparkles(container) {
@@ -762,10 +651,10 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
     const symbols = ["✦", "✧", "★", "❦", "♡"];
     for (let i = 0; i < 20; i++) {
       const s = document.createElement("span");
-      s.className = "wd-sparkle";
+      s.className = "wd-gate-sparkle";
       s.textContent = symbols[i % symbols.length];
       const angle = (i / 20) * 360 + (Math.random() * 20 - 10);
-      const dist = 55 + Math.random() * 95;
+      const dist = 45 + Math.random() * 85;
       const rad = (angle * Math.PI) / 180;
       const dx = Math.cos(rad) * dist + "px";
       const dy = Math.sin(rad) * dist + "px";
@@ -815,7 +704,7 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
     updateMusicUI(false);
   }
 
-  function openEnvelope(e) {
+  function openGate(e) {
     if (isOpened) return;
     isOpened = true;
     if (e) {
@@ -823,24 +712,23 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
       e.preventDefault();
     }
 
-    // Phát nhạc ngay lập tức trong cử chỉ chạm của người dùng
+    // 1. Phát nhạc ngay lập tức trong cử chỉ chạm của người dùng
     playAudio();
 
-    // Bắt đầu hiệu ứng tháo nơ lụa vàng
-    if (box) box.classList.add("wd-untying");
+    // 2. Hiệu ứng chim bay mở nơ và bụi phát sáng
+    if (modal) modal.classList.add("wd-untying");
     spawnSparkles(sparkles);
 
-    // Sau 350ms: Mở nắp phong bì & đưa thiệp nhô lên
+    // 3. Sau 350ms: Cánh cổng trượt mở sang 2 bên
     setTimeout(() => {
-      if (box) box.classList.add("wd-opening");
+      if (modal) modal.classList.add("wd-opening");
     }, 350);
 
-    // Sau 1100ms: Làm mờ dần màn hình phong bì để hiện thiệp cưới
+    // 4. Sau 1100ms: Bắt đầu video mở màn
     setTimeout(() => {
-      if (modal) modal.classList.add("wd-env-closing");
+      if (modal) modal.classList.add("wd-closing");
       window._envelopeIsOpen = true;
 
-      // Khởi động video mở màn ở đầu trang
       const heroVideo = document.querySelector(".wd-hero-video");
       if (heroVideo) {
         heroVideo.currentTime = 0;
@@ -848,7 +736,7 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
       }
     }, 1100);
 
-    // Sau 1800ms: Hoàn tất, ẩn hoàn toàn overlay & khôi phục cuộn trang
+    // 5. Sau 1500ms: Ẩn hoàn toàn overlay & khôi phục cuộn trang
     setTimeout(() => {
       if (modal) modal.style.display = "none";
       try { document.body.style.overflow = ""; } catch (err) {}
@@ -857,16 +745,15 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
       if (musicBtn) {
         musicBtn.style.display = "flex";
       }
-    }, 1800);
+    }, 1500);
   }
 
-  if (openBtn) openBtn.addEventListener("click", openEnvelope);
-  if (box) {
-    box.addEventListener("click", openEnvelope);
-    box.addEventListener("keydown", (e) => {
+  if (modal) {
+    modal.addEventListener("click", openGate);
+    modal.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        openEnvelope(e);
+        openGate(e);
       }
     });
   }
