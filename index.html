@@ -90,24 +90,6 @@ body{margin:0}
 @media (prefers-reduced-motion:reduce){
   .wd-stream-body-1,.wd-stream-body-2,.wd-stream-core-1,.wd-stream-core-2,.wd-ripple-1,.wd-ripple-2,.wd-mouth-gleam,.wd-fizz-1,.wd-fizz-2,.wd-fizz-3,.wd-fizz-4,.wd-star-1,.wd-star-2,.wd-star-3,.wd-suit-sway,.wd-dress-sway{animation:none!important}
 }
-
-/* NÚT ĐIỀU KHIỂN NHẠC NỀN */
-.wd-music-btn{position:fixed;top:18px;right:max(16px,calc(50vw - min(270px,calc(50vh * 414 / 736)) + 16px));width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(212,175,55,0.7);box-shadow:0 4px 18px rgba(27,38,82,0.18),0 2px 6px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:99999;transition:transform .25s cubic-bezier(0.34,1.56,0.64,1),box-shadow .25s ease,border-color .25s ease;user-select:none;-webkit-tap-highlight-color:transparent;outline:none;box-sizing:border-box;padding:0}
-.wd-music-btn:hover{transform:scale(1.08);box-shadow:0 6px 22px rgba(27,38,82,0.28);border-color:#D4AF37}
-.wd-music-btn:active{transform:scale(0.95)}
-.wd-music-btn:focus-visible{outline:2px solid #1B2652;outline-offset:2px}
-.wd-music-disk{position:relative;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transform-origin:center center;transition:opacity .3s ease}
-.wd-music-btn.wd-playing .wd-music-disk{animation:wd-spin 3.5s linear infinite}
-.wd-music-btn.wd-paused .wd-music-disk{animation:none;opacity:0.65}
-.wd-music-icon-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;pointer-events:none}
-.wd-music-waves{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(212,175,55,0.45);pointer-events:none;opacity:0}
-@keyframes wd-wave-pulse{0%{transform:scale(0.85);opacity:0.85}100%{transform:scale(1.35);opacity:0}}
-.wd-music-btn.wd-playing .wd-music-waves{animation:wd-wave-pulse 2s ease-out infinite}
-.wd-music-slash{position:absolute;top:50%;left:50%;width:26px;height:2px;background:#BC544E;border-radius:1px;transform:translate(-50%,-50%) rotate(-45deg);opacity:0;transition:opacity .2s ease;pointer-events:none;box-shadow:0 0 2px rgba(255,255,255,0.9)}
-.wd-music-btn.wd-paused .wd-music-slash{opacity:1}
-@media (prefers-reduced-motion:reduce){
-  .wd-music-btn.wd-playing .wd-music-disk,.wd-music-btn.wd-playing .wd-music-waves{animation:none!important}
-}
 </style>
 </helmet>
 <div class="wd-page" style="position: relative; width: 100%; background: #cccccc; display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif;">
@@ -336,8 +318,8 @@ el.loop = false;
 const p = el.play();
 if (p && p.catch) p.catch((err) => { if (err && err.name === 'NotAllowedError') this.showHero(); });
 },
-onVideoPlay: () => { if (this._raf) cancelAnimationFrame(this._raf); this.watchVideo(); },
-onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.showHero(); }
+onVideoPlay: () => { if (this._raf) cancelAnimationFrame(this._raf); this.watchVideo(); if (window.tryPlayAudio) window.tryPlayAudio(); },
+onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.showHero(); if (window.tryPlayAudio) window.tryPlayAudio(); }
 };
 }
 }
@@ -551,120 +533,48 @@ onVideoEnded: (e) => { if (e && e.currentTarget) e.currentTarget.pause(); this.s
 })();
 </script>
 
-<!-- Background Music Player -->
-<div id="wdMusicBtn" class="wd-music-btn wd-paused" role="button" tabindex="0" aria-label="Bật nhạc nền" title="Bật nhạc nền">
-  <div class="wd-music-waves"></div>
-  <div class="wd-music-disk">
-    <svg viewBox="0 0 32 32" width="32" height="32" style="display: block;">
-      <circle cx="16" cy="16" r="15" fill="#1B2652" stroke="#C59B5F" stroke-width="0.8" />
-      <circle cx="16" cy="16" r="12" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" />
-      <circle cx="16" cy="16" r="9.5" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="0.6" />
-      <circle cx="16" cy="16" r="7" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" />
-      <circle cx="16" cy="16" r="5" fill="#C59B5F" />
-      <circle cx="16" cy="16" r="1.5" fill="#1B2652" />
-    </svg>
-    <div class="wd-music-icon-center">
-      <svg viewBox="0 0 24 24" width="10" height="10" fill="#ffffff">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-      </svg>
-    </div>
-  </div>
-  <div class="wd-music-slash"></div>
-</div>
-<audio id="wdBgMusic" loop preload="auto" playsinline>
+<!-- Background Music (Tự động phát) -->
+<audio id="wdBgMusic" autoplay loop preload="auto" playsinline style="display:none;">
   <source src="./assets/music.m4a" type="audio/mp4">
 </audio>
 <script>
 (() => {
   const audio = document.getElementById("wdBgMusic");
-  const musicBtn = document.getElementById("wdMusicBtn");
-  if (!audio || !musicBtn) return;
+  if (!audio) return;
 
-  let isPlaying = false;
-  let userManuallyPaused = false;
-  audio.volume = 0.75;
+  audio.volume = 0.8;
 
-  function updateUI(playing) {
-    if (playing) {
-      musicBtn.classList.add("wd-playing");
-      musicBtn.classList.remove("wd-paused");
-      musicBtn.setAttribute("aria-label", "Tắt nhạc nền");
-      musicBtn.setAttribute("title", "Tắt nhạc nền");
-    } else {
-      musicBtn.classList.remove("wd-playing");
-      musicBtn.classList.add("wd-paused");
-      musicBtn.setAttribute("aria-label", "Bật nhạc nền");
-      musicBtn.setAttribute("title", "Bật nhạc nền");
+  function tryPlay() {
+    if (audio.paused) {
+      const p = audio.play();
+      if (p !== undefined) {
+        p.catch(() => {});
+      }
     }
   }
 
-  function playAudio() {
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          isPlaying = true;
-          updateUI(true);
-        })
-        .catch(() => {
-          isPlaying = false;
-          updateUI(false);
-        });
+  window.tryPlayAudio = tryPlay;
+
+  // Cố gắng phát ngay lập tức khi vừa vào trang
+  tryPlay();
+  window.addEventListener("load", tryPlay, { once: true });
+  document.addEventListener("DOMContentLoaded", tryPlay, { once: true });
+
+  // Phát ngay khi có bất kỳ tương tác/chạm/cuộn nào đầu tiên (nếu trình duyệt có chính sách hạn chế autoplay có âm thanh)
+  const unlockEvents = ["pointerdown", "touchstart", "mousedown", "click", "scroll", "keydown"];
+  function onFirstGesture() {
+    tryPlay();
+    if (!audio.paused) {
+      unlockEvents.forEach((evt) => {
+        window.removeEventListener(evt, onFirstGesture, { passive: true, capture: true });
+        document.removeEventListener(evt, onFirstGesture, { passive: true, capture: true });
+      });
     }
   }
 
-  function pauseAudio() {
-    audio.pause();
-    isPlaying = false;
-    updateUI(false);
-  }
-
-  function togglePlay(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (isPlaying) {
-      userManuallyPaused = true;
-      pauseAudio();
-    } else {
-      userManuallyPaused = false;
-      playAudio();
-    }
-  }
-
-  musicBtn.addEventListener("click", togglePlay);
-  musicBtn.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      togglePlay(e);
-    }
-  });
-
-  // Tự động phát khi tải trang nếu trình duyệt cho phép
-  playAudio();
-
-  // Tự động phát ở tương tác đầu tiên của người dùng (khi trình duyệt chặn autoplay)
-  const interactionEvents = ["pointerdown", "touchstart", "click", "scroll", "keydown"];
-  function onFirstInteraction() {
-    if (!isPlaying && !userManuallyPaused) {
-      playAudio();
-    }
-    interactionEvents.forEach((evt) => {
-      window.removeEventListener(evt, onFirstInteraction, { passive: true });
-    });
-  }
-  interactionEvents.forEach((evt) => {
-    window.addEventListener(evt, onFirstInteraction, { passive: true });
-  });
-
-  audio.addEventListener("play", () => {
-    isPlaying = true;
-    updateUI(true);
-  });
-  audio.addEventListener("pause", () => {
-    isPlaying = false;
-    updateUI(false);
+  unlockEvents.forEach((evt) => {
+    window.addEventListener(evt, onFirstGesture, { passive: true, capture: true });
+    document.addEventListener(evt, onFirstGesture, { passive: true, capture: true });
   });
 })();
 </script>
